@@ -75,8 +75,8 @@ export default function HubShowcase() {
       <div className="max-w-6xl mx-auto">
         <header className="mb-14 text-center relative">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-red-600/10 blur-[120px] pointer-events-none rounded-full" />
-          <span className="inline-block bg-red-600 text-white px-4 py-1.5 font-black italic uppercase text-lg tracking-wider rounded shadow-lg mb-6">Showcase B2B</span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight drop-shadow-md text-transparent bg-clip-text bg-gradient-to-r from-white via-red-100 to-zinc-400">Winamax x Small x Jourdechance</h1>
+          <span className="inline-block bg-red-600 text-white px-4 py-1.5 font-black italic uppercase text-lg tracking-wider rounded shadow-lg mb-6">Winamax</span>
+          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight drop-shadow-md">Showcase B2B</h1>
           <p className="text-zinc-400 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
             Aperçu des 8 modules interactifs exclusifs conçus pour un engagement maximal chez les partenaires médias. 
           </p>
