@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, PlayCircle, MessageSquare, TrendingUp, Trophy, CalendarClock, Play, Share2, Heart, MessageCircle, Code, Server, Users } from 'lucide-react';
+import { ArrowLeft, PlayCircle, MessageSquare, TrendingUp, Trophy, CalendarClock, Play, Share2, Heart, MessageCircle, Code, Server, Users, Info } from 'lucide-react';
 import PitchModal from '@/components/PitchModal';
 
 export default function AntenneWinamax() {
@@ -198,12 +198,36 @@ export default function AntenneWinamax() {
           {/* Tab: FEED SOCIAL & DATA (Le Mur des Émotions) */}
           {activeTab === 'feed' && (
             <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
-              <div className="mb-2">
-                <h3 className="font-black text-xl flex items-center gap-2"><MessageSquare className="text-yellow-500" size={20} /> Le Mur des Émotions</h3>
+              <div className="mb-4">
+                <h3 className="font-black text-xl flex items-center gap-2">
+                  <MessageSquare className="text-yellow-500" size={20} /> 
+                  Le Mur des Émotions
+                  <div className="group relative inline-block ml-1">
+                    <Info size={16} className="text-zinc-500 hover:text-yellow-400 cursor-pointer transition-colors" />
+                    {/* Tooltip IA */}
+                    <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-3 w-64 bg-zinc-800 text-xs text-zinc-300 p-3 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 border border-white/10 pointer-events-none">
+                      <strong className="text-white block mb-1 text-sm"><span className="text-yellow-500">🤖</span> Généré par IA</strong>
+                      Contenu (memes, punchlines, tri des posts) rédigé et modéré en temps réel par notre IA avec un ton volontairement jeune, piquant et décalé.
+                      <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-zinc-800 rotate-45 border-r border-b border-white/10" />
+                    </div>
+                  </div>
+                </h3>
                 <p className="text-zinc-400 text-sm">L'alternative au forum, sans la galère de la modération. Agrégateur de dingueries #WinamaxSoFoot.</p>
               </div>
 
-              {/* Feed Item 1: Meme / Post */}
+              {/* Feed Item 1: Stat IA Piquante */}
+              <div className="p-4 bg-zinc-900/80 rounded-2xl border border-white/5 hover:bg-zinc-800/80 transition-colors shadow-inner">
+                <div className="flex items-center gap-2 text-sky-400 font-bold text-xs uppercase tracking-widest mb-2">
+                  <span>🤖 IA WinaX</span>
+                </div>
+                <p className="text-zinc-200 text-sm italic font-medium">"Possession : 82%. Tirs cadrés : 0. Le fameux football possession qu'on aime tant. Réveillez-vous 😭"</p>
+                <div className="flex gap-4 mt-3 text-zinc-500">
+                  <button className="flex items-center gap-1.5 text-xs hover:text-red-400 transition-colors font-medium"><Heart size={14}/> 1.2k</button>
+                  <button className="flex items-center gap-1.5 text-xs hover:text-white transition-colors font-medium"><MessageCircle size={14}/> 84</button>
+                </div>
+              </div>
+
+              {/* Feed Item 2: Meme / Post */}
               <div className="p-4 bg-zinc-900/80 rounded-2xl border border-white/5 hover:bg-zinc-800/80 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center font-bold">@S</div>
@@ -218,7 +242,35 @@ export default function AntenneWinamax() {
                 </div>
               </div>
 
-              {/* Feed Item 2: Fan Zone Video Mock */}
+              {/* Feed Item 3: Ticket Gagnant de fou */}
+              <div className="p-4 bg-gradient-to-br from-emerald-950 to-zinc-900 rounded-2xl border border-emerald-500/20 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:scale-110 transition-transform">
+                  <TrendingUp size={100} />
+                </div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-widest mb-3 pb-2 border-b border-emerald-500/20">
+                    <TrendingUp size={16} /> Le Ticket Extraterrestre
+                  </div>
+                  <p className="text-white font-bold mb-2 text-sm">Ce génie a validé une cote à 245.00 à la 92ème minute ! 😱</p>
+                  <div className="bg-black/50 p-3 rounded-xl border border-emerald-500/10 font-mono text-sm text-emerald-200 shadow-inner">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-xs text-zinc-400 uppercase tracking-wider">Cote</span>
+                      <span className="font-bold">245.00</span>
+                    </div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-xs text-zinc-400 uppercase tracking-wider">Mise</span> 
+                      <span className="text-white">10 €</span>
+                    </div>
+                    <div className="w-full h-px bg-emerald-500/20 mb-2"></div>
+                    <div className="flex justify-between items-end">
+                      <span className="text-xs text-zinc-400 uppercase tracking-wider">Gains</span>
+                      <span className="font-black text-2xl text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.8)]">2 450 €</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Feed Item 4: Fan Zone Video Mock */}
               <div className="flex gap-4 p-4 bg-zinc-900/80 rounded-2xl border border-white/5 hover:bg-zinc-800/80 transition-colors shadow-inner">
                 <div className="w-24 h-32 md:w-32 md:h-40 bg-zinc-800 rounded-xl relative overflow-hidden flex-shrink-0 group cursor-pointer border border-white/5">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
@@ -240,15 +292,23 @@ export default function AntenneWinamax() {
                 </div>
               </div>
 
-              {/* Feed Item 3: Ticket Gagnant */}
-              <div className="p-4 bg-gradient-to-br from-emerald-950 to-zinc-900 rounded-2xl border border-emerald-500/20">
-                <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-widest mb-3 pb-2 border-b border-emerald-500/20">
-                  <TrendingUp size={16} /> Ticket de la Soirée
-                </div>
-                <p className="text-white font-bold mb-2">Ce génie a validé une cote à 245.00 !</p>
-                <div className="bg-black/50 p-3 rounded-lg border border-emerald-500/10 font-mono text-sm text-emerald-200">
-                  <div className="flex justify-between"><span>Mise:</span> <span className="text-white">10 €</span></div>
-                  <div className="flex justify-between mt-1"><span>Gains:</span> <span className="font-black text-emerald-400">2,450 €</span></div>
+              {/* Feed Item 5: Un autre pari de fou (Perdu) */}
+              <div className="p-4 bg-gradient-to-br from-red-950 to-zinc-900 rounded-2xl border border-red-500/20 relative overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
+                <div className="relative z-10">
+                  <div className="flex items-center gap-2 text-red-400 font-bold text-xs uppercase tracking-widest mb-3 pb-2 border-b border-red-500/20">
+                    <TrendingUp size={16} className="rotate-180" /> La Clim du Jour
+                  </div>
+                  <p className="text-white font-bold mb-2 text-sm">Il a posé son loyer sur un doublé de Kanté : respect à ce fou furieux 🫡</p>
+                  <div className="bg-black/50 p-3 rounded-xl border border-red-500/10 font-mono text-sm text-red-200">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-xs text-zinc-400 uppercase tracking-wider">Cote</span>
+                      <span className="font-bold">80.00</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs text-zinc-400 uppercase tracking-wider">Mise en PLS</span> 
+                      <span className="text-white font-bold">500 €</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
