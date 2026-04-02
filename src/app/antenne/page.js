@@ -2,11 +2,12 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, PlayCircle, MessageSquare, TrendingUp, Trophy, CalendarClock, Play, Share2, Heart, MessageCircle, Code, Server, Users, Info } from 'lucide-react';
+import { ArrowLeft, PlayCircle, MessageSquare, TrendingUp, Trophy, CalendarClock, Play, Share2, Heart, MessageCircle, Code, Server, Users, Info, Settings, X, TerminalSquare, Cpu, Network } from 'lucide-react';
 import PitchModal from '@/components/PitchModal';
 
 export default function AntenneWinamax() {
   const [activeTab, setActiveTab] = useState('feed');
+  const [showTechModal, setShowTechModal] = useState(false);
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white font-sans overflow-x-hidden selection:bg-yellow-500/30">
@@ -132,6 +133,15 @@ export default function AntenneWinamax() {
                 <span className="bg-zinc-700 px-1.5 py-0.5 rounded text-white hover:bg-yellow-600 transition-colors cursor-pointer border border-transparent hover:border-yellow-500/50">12.0</span>
               </div>
             </div>
+
+            {/* Salle des Machines Button */}
+            <button 
+              onClick={() => setShowTechModal(true)}
+              className="ml-2 w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-zinc-800/50 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors border border-white/5 group"
+              title="La Salle des Machines"
+            >
+              <Settings size={20} className="group-hover:animate-[spin_4s_linear_infinite]" />
+            </button>
           </div>
         </header>
 
@@ -483,6 +493,59 @@ export default function AntenneWinamax() {
 
         </div>
       </main>
+
+      {/* Tech Architecture Modal */}
+      {showTechModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setShowTechModal(false)} />
+          <div className="relative w-full max-w-2xl bg-zinc-900 border border-white/10 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            <div className="p-6 border-b border-white/5 flex justify-between items-center bg-zinc-800/50">
+              <h3 className="text-xl font-black flex items-center gap-3">
+                <Settings className="text-sky-500 animate-[spin_4s_linear_infinite]" size={24} />
+                La Salle des Machines (Backend)
+              </h3>
+              <button onClick={() => setShowTechModal(false)} className="text-zinc-500 hover:text-white p-1 hover:bg-zinc-800 rounded-lg transition-colors">
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="p-6 space-y-6">
+              <div className="p-4 bg-sky-950/30 border border-sky-500/20 rounded-xl">
+                <p className="text-sky-200 text-sm italic font-medium">
+                  "L'objectif ? Que le développeur du partenaire médias n'ait rigoureusement rien à maintenir de son côté au milieu de la nuit."
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-zinc-950 p-4 rounded-xl border border-white/5 shadow-inner">
+                  <h4 className="font-bold text-sky-400 mb-2 flex items-center gap-2"><Network size={16} /> Edge Network CDN</h4>
+                  <p className="text-xs text-zinc-400 leading-relaxed">Déploiement mondial décentralisé (Next.js Edge). L'interface est servie statiquement et dynamiquement depuis le point le plus proche du lecteur.</p>
+                </div>
+                
+                <div className="bg-zinc-950 p-4 rounded-xl border border-white/5 shadow-inner">
+                  <h4 className="font-bold text-purple-400 mb-2 flex items-center gap-2"><Cpu size={16} /> WebSocket Live</h4>
+                  <p className="text-xs text-zinc-400 leading-relaxed">Tunnel bidirectionnel sur Node.js/Socket.io. Synchronisation des cotes temps-réel, du live-score et de la jauge d'émotion en millisecondes.</p>
+                </div>
+                
+                <div className="bg-zinc-950 p-4 rounded-xl border border-white/5 shadow-inner">
+                  <h4 className="font-bold text-emerald-400 mb-2 flex items-center gap-2"><TerminalSquare size={16} /> Generative AI Pipeline</h4>
+                  <p className="text-xs text-zinc-400 leading-relaxed">Modèles LLM (Type OpenAI/Gemini) customisés en permanence. Agrégation, clustering NLP des sujets tendances, modération stricte anti-insulte et génération des "punchlines" du feed.</p>
+                </div>
+                
+                <div className="bg-zinc-950 p-4 rounded-xl border border-white/5 shadow-inner">
+                  <h4 className="font-bold text-yellow-400 mb-2 flex items-center gap-2"><Server size={16} /> Microservices Affiliation</h4>
+                  <p className="text-xs text-zinc-400 leading-relaxed">API REST sécurisée pur Gérer l'état JWT, le tracking des cookies FTD (First Time Depositor) sur site tiers, et l'attribution de Freebets via webhook asynchrone.</p>
+                </div>
+              </div>
+              
+              <div className="text-center pt-2">
+                <span className="text-xs text-zinc-500 uppercase tracking-widest font-black">Powered by Winamax Dev Team</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* --- END OF WINAMAX WIDGET --- */}
       
     </div>

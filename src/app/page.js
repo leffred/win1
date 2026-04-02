@@ -74,7 +74,8 @@ export default function HubShowcase() {
       description: 'Le hub immersif et social "Box Digitale" partenaire (Live, Vidéo, Pronos).',
       icon: '📡',
       color: 'from-yellow-600 to-amber-900',
-      link: '/antenne'
+      link: '/antenne',
+      colSpan: 'lg:col-span-3 md:col-span-2'
     }
   ];
 
@@ -92,7 +93,7 @@ export default function HubShowcase() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
           {widgets.map((widget) => (
-            <Link key={widget.id} href={widget.link} className="group relative block overflow-hidden rounded-3xl p-0.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+            <Link key={widget.id} href={widget.link} className={`group relative block overflow-hidden rounded-3xl p-0.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${widget.colSpan || ''}`}>
               <div className={`absolute inset-0 bg-gradient-to-br ${widget.color} opacity-40 group-hover:opacity-100 transition-opacity duration-500`} />
               
               <div className="relative bg-zinc-950/90 backdrop-blur-xl rounded-[22px] h-full p-6 flex flex-col justify-between border border-white/5 transition-colors group-hover:bg-zinc-950/80">

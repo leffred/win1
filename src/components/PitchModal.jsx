@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Info, X, Target, Zap, ShieldAlert, Rocket } from 'lucide-react';
 
-export default function PitchModal({ title, adn, why, swot }) {
+export default function PitchModal({ title, adn, why, swot, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -91,13 +91,20 @@ export default function PitchModal({ title, adn, why, swot }) {
               {/* Scalabilité */}
               <section className="bg-red-600/10 p-4 rounded-xl border border-red-600/20">
                 <h4 className="flex items-center gap-2 font-bold text-red-500 mb-2 uppercase text-xs tracking-widest">
-                  <Rocket size={16} /> Modèle d'Intégration
+                  <Rocket size={16} /> Modèle d'Intégration Standard
                 </h4>
                 <p className="text-zinc-300 text-sm leading-relaxed">
                   Conçu en "Lightweight React Component", déployable via une simple iframes `{'<iframe>'}` chez vos affiliés média, 
                   sans aucun impact négatif sur leur SEO ou leur temps de chargement.
                 </p>
               </section>
+
+              {/* Custom Additional Content */}
+              {children && (
+                <div className="mt-8 space-y-8">
+                  {children}
+                </div>
+              )}
 
             </div>
           </div>
