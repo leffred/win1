@@ -85,20 +85,20 @@ export default function AntenneWinamax() {
 
         <section className="bg-zinc-800/30 p-5 rounded-xl border border-white/5">
           <h4 className="flex items-center gap-2 font-bold text-white mb-3 uppercase text-xs tracking-widest border-b border-white/5 pb-2">
-            <Users size={16} className="text-emerald-400" /> Pourquoi c'est la "Tueuse" de bannières ?
+            <Users size={16} className="text-emerald-400" /> Un format natif au-delà de la bannière
           </h4>
           <ul className="space-y-4">
             <li className="flex flex-col">
-              <strong className="text-emerald-400 text-sm">Pour le Directeur Marketing (Propriété de l'audience)</strong>
-              <span className="text-zinc-400 text-sm">Il achète une présence native. On ne "coupe" pas la lecture du fan, on l'enrichit. L'utilisateur reste 15 minutes sur l'espace Winamax.</span>
+              <strong className="text-emerald-400 text-sm">Acquisition & Rétention Natives</strong>
+              <span className="text-zinc-400 text-sm">Contrairement à une bannière intrusive qui "coupe" la lecture, l'Antenne enrichit l'expérience. Le fan consomme du contenu et reste engagé longuement (jusqu'à 15 min) sur un espace aux couleurs de Winamax, sans quitter l'écosystème de l'éditeur.</span>
             </li>
             <li className="flex flex-col">
-              <strong className="text-emerald-400 text-sm">Pour le Partenaire (Expertise)</strong>
-              <span className="text-zinc-400 text-sm">Il récupère du contenu vidéo ultra-qualitatif (vos émissions) qu'il n'aurait pas les moyens de produire lui-même.</span>
+              <strong className="text-emerald-400 text-sm">Contenu Vidéo Premium "Plug & Play"</strong>
+              <span className="text-zinc-400 text-sm">Le partenaire intègre instantanément des émissions et débriefs vidéo ultra-qualitatifs, fidélisant son audience sans avoir besoin de supporter les coûts ni la logistique de production.</span>
             </li>
             <li className="flex flex-col">
-              <strong className="text-emerald-400 text-sm">Pour l'utilisateur final</strong>
-              <span className="text-zinc-400 text-sm">Il a tout au même endroit : Actu + Vidéo + Pronos + Fun. La préférence de marque se construit ici.</span>
+              <strong className="text-emerald-400 text-sm">Hub d'Engagement Tout-en-Un</strong>
+              <span className="text-zinc-400 text-sm">Actu, vidéo en direct, chat communautaire et pronostics réunis au même endroit. C'est ici que l'audience passe à l'action et que la préférence de marque se construit naturellement.</span>
             </li>
           </ul>
         </section>
