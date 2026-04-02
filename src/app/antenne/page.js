@@ -32,6 +32,14 @@ export default function AntenneWinamax() {
         </div>
       </div>
 
+      <button
+        onClick={() => setShowTechModal(true)}
+        className="absolute top-4 right-14 md:right-16 z-50 w-8 h-8 md:w-10 md:h-10 bg-zinc-800/80 backdrop-blur border border-white/10 rounded-full flex items-center justify-center text-sky-400/80 hover:text-sky-400 hover:bg-zinc-700/80 transition-all hover:scale-110 shadow-lg group"
+        title="La Salle des Machines"
+      >
+        <Settings size={18} className="group-hover:animate-[spin_4s_linear_infinite]" />
+      </button>
+
       <PitchModal 
         title="La Box Digitale : L'Antenne Winamax"
         adn="Un hub immersif 'plug & play' hébergé par Winamax mais encapsulé sur les sites médias partenaires. C'est le point de rassemblement quotidien des audiences pendant un grand événement (CDM 2026)."
@@ -133,15 +141,6 @@ export default function AntenneWinamax() {
                 <span className="bg-zinc-700 px-1.5 py-0.5 rounded text-white hover:bg-yellow-600 transition-colors cursor-pointer border border-transparent hover:border-yellow-500/50">12.0</span>
               </div>
             </div>
-
-            {/* Salle des Machines Button */}
-            <button 
-              onClick={() => setShowTechModal(true)}
-              className="ml-2 w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-zinc-800/50 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors border border-white/5 group"
-              title="La Salle des Machines"
-            >
-              <Settings size={20} className="group-hover:animate-[spin_4s_linear_infinite]" />
-            </button>
           </div>
         </header>
 
