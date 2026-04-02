@@ -491,6 +491,56 @@ export default function AntenneWinamax() {
           )}
 
         </div>
+
+        {/* Section Articles de l'Éditeur */}
+        <section className="mt-16 pt-8 border-t border-zinc-200/20 md:border-t-0">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-white flex items-center gap-3">
+              <span className="w-1.5 h-6 bg-red-600 rounded-full"></span>
+              À la Une sur SoFoot
+            </h3>
+            <button className="text-sm font-bold text-zinc-400 hover:text-white transition-colors">Toute l'actu CDM &rarr;</button>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+            {/* Article 1 */}
+            <a href="#" className="group block bg-zinc-900/50 hover:bg-zinc-800/80 border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div className="aspect-[16/9] bg-zinc-800 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-black/80 mix-blend-overlay opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                <span className="absolute top-3 left-3 bg-red-600 text-white text-[10px] sm:text-xs font-black uppercase px-2 py-0.5 rounded shadow-lg">Équipe de France</span>
+              </div>
+              <div className="p-4 sm:p-5">
+                <h4 className="font-bold text-base sm:text-lg leading-snug group-hover:text-red-400 transition-colors">Mbappé en 2026 : Le nouveau rôle tactique qui change tout</h4>
+                <p className="text-xs text-zinc-500 mt-3 font-medium">Par l'équipe tactique • Il y a 2h</p>
+              </div>
+            </a>
+            
+            {/* Article 2 */}
+            <a href="#" className="group block bg-zinc-900/50 hover:bg-zinc-800/80 border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div className="aspect-[16/9] bg-zinc-800 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-900/40 to-black/80 mix-blend-overlay opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                <span className="absolute top-3 left-3 bg-zinc-700 text-white text-[10px] sm:text-xs font-black uppercase px-2 py-0.5 rounded shadow-lg">Analyse</span>
+              </div>
+              <div className="p-4 sm:p-5">
+                <h4 className="font-bold text-base sm:text-lg leading-snug group-hover:text-red-400 transition-colors">Pourquoi le Brésil n'est plus le favori naturel d'un mondial ?</h4>
+                <p className="text-xs text-zinc-500 mt-3 font-medium">Par Romain B. • Il y a 4h</p>
+              </div>
+            </a>
+            
+            {/* Article 3 */}
+            <a href="#" className="group block bg-zinc-900/50 hover:bg-zinc-800/80 border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 sm:col-span-2 md:col-span-1">
+              <div className="aspect-[16/9] bg-zinc-800 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-700/40 to-black/80 mix-blend-overlay opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                <span className="absolute top-3 left-3 bg-zinc-700 text-white text-[10px] sm:text-xs font-black uppercase px-2 py-0.5 rounded shadow-lg">Coulisses</span>
+              </div>
+              <div className="p-4 sm:p-5">
+                <h4 className="font-bold text-base sm:text-lg leading-snug group-hover:text-red-400 transition-colors">Dans les secrets du camp de base XXL des Bleus à Los Angeles</h4>
+                <p className="text-xs text-zinc-500 mt-3 font-medium">Par Envoyé Spécial • Il y a 6h</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
       </main>
 
       {/* Tech Architecture Modal */}
