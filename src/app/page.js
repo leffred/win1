@@ -67,6 +67,14 @@ export default function HubShowcase() {
       icon: '😈',
       color: 'from-red-700 to-red-950',
       link: '/pari-ennemi'
+    },
+    {
+      id: 'antenne',
+      title: 'L\'Antenne Winamax',
+      description: 'Le hub immersif et social "Box Digitale" partenaire (Live, Vidéo, Pronos).',
+      icon: '📡',
+      color: 'from-yellow-600 to-amber-900',
+      link: '/antenne'
     }
   ];
 
