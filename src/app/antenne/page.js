@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, PlayCircle, MessageSquare, TrendingUp, Trophy, CalendarClock, Play, Share2, Heart, MessageCircle, Code, Server, Users, Info, Settings, X, TerminalSquare, Cpu, Network } from 'lucide-react';
+import { ArrowLeft, PlayCircle, MessageSquare, TrendingUp, Trophy, CalendarClock, Play, Share2, Heart, MessageCircle, Code, Server, Users, Info, Settings, X, TerminalSquare, Cpu, Network, Twitch } from 'lucide-react';
 import PitchModal from '@/components/PitchModal';
 
 export default function AntenneWinamax() {
@@ -641,6 +641,11 @@ export default function AntenneWinamax() {
                 <div className="bg-zinc-950 p-4 rounded-xl border border-white/5 shadow-inner">
                   <h4 className="font-bold text-yellow-400 mb-2 flex items-center gap-2"><Server size={16} /> Microservices Affiliation</h4>
                   <p className="text-xs text-zinc-400 leading-relaxed">API REST sécurisée pur Gérer l'état JWT, le tracking des cookies FTD (First Time Depositor) sur site tiers, et l'attribution de Freebets via webhook asynchrone.</p>
+                </div>
+                
+                <div className="bg-purple-950/20 p-4 rounded-xl border border-purple-500/30 shadow-inner md:col-span-2">
+                  <h4 className="font-bold text-purple-400 mb-2 flex items-center gap-2"><Twitch size={16} /> Intégration Twitch (Video & Modération)</h4>
+                  <p className="text-xs text-zinc-300 leading-relaxed">L'infrastructure de streaming "Winamax TV" et le système de commentaires s'appuient sur l'écosystème Twitch : robustesse de diffusion à très grande échelle et utilisation des outils existants (AutoMod, Nightbot, banlist unifiée) pour garantir un contenu parfaitement modéré (Brand Safety) directement sur le site de l'éditeur.</p>
                 </div>
               </div>
               
