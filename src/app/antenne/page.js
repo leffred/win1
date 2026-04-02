@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, PlayCircle, MessageSquare, TrendingUp, Trophy, CalendarClock, Play, Share2, Heart, MessageCircle } from 'lucide-react';
+import { ArrowLeft, PlayCircle, MessageSquare, TrendingUp, Trophy, CalendarClock, Play, Share2, Heart, MessageCircle, Code, Server, Users } from 'lucide-react';
 import PitchModal from '@/components/PitchModal';
 
 export default function AntenneWinamax() {
@@ -41,7 +41,59 @@ export default function AntenneWinamax() {
           o: ["Ouvrir 100 antennes sur 100 sites d'influenceurs ou médias différents avec le même effort.", "Créer des Ligues d'Affiliés génératrices de leads (FTD)."],
           t: ["Les médias peuvent refuser de perdre le contrôle éditorial de leur page.", "Régulation ARJEL sur la poussée agressive de cotes hors plateforme."]
         }}
-      />
+      >
+        <section className="bg-amber-950/20 p-5 rounded-xl border border-amber-500/20">
+          <h4 className="flex items-center gap-2 font-bold text-amber-500 mb-3 uppercase text-xs tracking-widest border-b border-amber-500/10 pb-2">
+            <Trophy size={16} /> L'Innovation "Engagement" : La Ligue des Affiliés
+          </h4>
+          <p className="text-zinc-300 text-sm mb-3">C'est ici qu'on transforme le lecteur en membre de la "famille" Winamax.</p>
+          <ul className="space-y-3 pl-4 border-l-2 border-amber-500/30">
+            <li className="text-sm"><strong className="text-white">Le concept :</strong> Chaque site partenaire (So Foot, L'Équipe, Blog de supporters) possède sa propre Ligue de Pronostics Gratuits au sein du hub.</li>
+            <li className="text-sm"><strong className="text-white">Mécanique :</strong> Un concours de pronos "sans argent" (juste pour l'honneur et des points).</li>
+            <li className="text-sm"><strong className="text-white">Le Reward :</strong> Winamax offre des Freebets et des maillots aux 10 premiers de la ligue "So Foot".</li>
+            <li className="text-sm text-amber-200 mt-2 p-2 bg-amber-500/10 rounded border border-amber-500/20">
+              <strong className="text-amber-500">Le Drive-to-Bet magique :</strong> Sous chaque prono gratuit, on affiche : <em>"Tu es sûr de toi ? En vrai, ce prono te rapporterait 45€ sur Winamax. [Je parie pour de vrai]"</em>.
+            </li>
+          </ul>
+        </section>
+
+        <section className="bg-zinc-800/30 p-5 rounded-xl border border-white/5">
+          <h4 className="flex items-center gap-2 font-bold text-white mb-3 uppercase text-xs tracking-widest border-b border-white/5 pb-2">
+            <Code size={16} className="text-sky-400" /> Architecture Technique : Le "Plug & Play"
+          </h4>
+          <p className="text-zinc-300 text-sm mb-3 font-medium text-sky-200">L'argument massue : l'affilié n'a presque rien à faire.</p>
+          <div className="grid gap-3">
+            <div className="bg-black/40 p-3 rounded-lg border border-white/5">
+              <strong className="text-white text-sm block mb-1 flex items-center gap-2"><Code size={14} className="text-sky-500"/> Architecture "Container"</strong>
+              <span className="text-zinc-400 text-sm">On développe un module unique en React/Next.js. On change simplement le logo et la couleur primaire (ex: Vert pour l'Équipe, Bleu pour un autre) via une simple feuille de style.</span>
+            </div>
+            <div className="bg-black/40 p-3 rounded-lg border border-white/5">
+              <strong className="text-white text-sm block mb-1 flex items-center gap-2"><Server size={14} className="text-sky-500"/> Centralisation & Hébergement</strong>
+              <span className="text-zinc-400 text-sm">Vos équipes publient une seule fois sur un "Back-Office Winamax", et ça se déploie partout. L'Hébergement est géré par Winamax, l'affilié n'ajoute qu'un script : <code className="text-xs bg-black px-1 py-0.5 rounded text-sky-300">&lt;script src="winamax-fan-zone.js"&gt;&lt;/script&gt;</code>.</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-zinc-800/30 p-5 rounded-xl border border-white/5">
+          <h4 className="flex items-center gap-2 font-bold text-white mb-3 uppercase text-xs tracking-widest border-b border-white/5 pb-2">
+            <Users size={16} className="text-emerald-400" /> Pourquoi c'est la "Tueuse" de bannières ?
+          </h4>
+          <ul className="space-y-4">
+            <li className="flex flex-col">
+              <strong className="text-emerald-400 text-sm">Pour le Directeur Marketing (Propriété de l'audience)</strong>
+              <span className="text-zinc-400 text-sm">Il achète une présence native. On ne "coupe" pas la lecture du fan, on l'enrichit. L'utilisateur reste 15 minutes sur l'espace Winamax.</span>
+            </li>
+            <li className="flex flex-col">
+              <strong className="text-emerald-400 text-sm">Pour le Partenaire (Expertise)</strong>
+              <span className="text-zinc-400 text-sm">Il récupère du contenu vidéo ultra-qualitatif (vos émissions) qu'il n'aurait pas les moyens de produire lui-même.</span>
+            </li>
+            <li className="flex flex-col">
+              <strong className="text-emerald-400 text-sm">Pour l'utilisateur final</strong>
+              <span className="text-zinc-400 text-sm">Il a tout au même endroit : Actu + Vidéo + Pronos + Fun. La préférence de marque se construit ici.</span>
+            </li>
+          </ul>
+        </section>
+      </PitchModal>
 
       {/* --- START OF WINAMAX WIDGET --- */}
       <main className="max-w-4xl mx-auto my-8 bg-black rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(202,138,4,0.15)] border border-yellow-900/30 relative">
@@ -143,10 +195,30 @@ export default function AntenneWinamax() {
         {/* Content Area */}
         <div className="p-4 md:p-6 min-h-[400px]">
           
-          {/* Tab: FEED SOCIAL & DATA */}
+          {/* Tab: FEED SOCIAL & DATA (Le Mur des Émotions) */}
           {activeTab === 'feed' && (
             <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
-              {/* Short Component */}
+              <div className="mb-2">
+                <h3 className="font-black text-xl flex items-center gap-2"><MessageSquare className="text-yellow-500" size={20} /> Le Mur des Émotions</h3>
+                <p className="text-zinc-400 text-sm">L'alternative au forum, sans la galère de la modération. Agrégateur de dingueries #WinamaxSoFoot.</p>
+              </div>
+
+              {/* Feed Item 1: Meme / Post */}
+              <div className="p-4 bg-zinc-900/80 rounded-2xl border border-white/5 hover:bg-zinc-800/80 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center font-bold">@S</div>
+                  <div>
+                    <strong className="text-sm block">SoFootOfficiel</strong>
+                    <span className="text-xs text-zinc-500">Il y a 2 min • Insta</span>
+                  </div>
+                </div>
+                <p className="text-zinc-200 text-sm mb-3">Quand tu réalises que Upamecano a couru plus vite que Mbappé sur cette action 💀 #WinamaxSoFoot</p>
+                <div className="w-full h-40 bg-zinc-800 rounded-xl relative overflow-hidden flex items-center justify-center border border-white/5">
+                  <span className="text-4xl">🏃‍♂️💨</span>
+                </div>
+              </div>
+
+              {/* Feed Item 2: Fan Zone Video Mock */}
               <div className="flex gap-4 p-4 bg-zinc-900/80 rounded-2xl border border-white/5 hover:bg-zinc-800/80 transition-colors shadow-inner">
                 <div className="w-24 h-32 md:w-32 md:h-40 bg-zinc-800 rounded-xl relative overflow-hidden flex-shrink-0 group cursor-pointer border border-white/5">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
@@ -158,44 +230,25 @@ export default function AntenneWinamax() {
                   </div>
                 </div>
                 <div className="flex flex-col justify-center">
-                  <span className="text-xs font-black text-yellow-500 tracking-widest uppercase mb-1 drop-shadow">Short Débrief</span>
-                  <h3 className="font-bold text-lg md:text-xl leading-tight mb-2">"Il a cassé des reins toute la soirée..."</h3>
-                  <p className="text-sm text-zinc-400 line-clamp-2">Le résumé express de la performance hors-norme du numéro 10 argentin en moins de 60 secondes.</p>
+                  <span className="text-xs font-black text-yellow-500 tracking-widest uppercase mb-1 drop-shadow">Fan Zone Live</span>
+                  <h3 className="font-bold text-lg md:text-xl leading-tight mb-2">Explosion de joie à la Bastille !</h3>
+                  <p className="text-sm text-zinc-400 line-clamp-2">L'ambiance est totalement irréelle après ce missile de l'extérieur de la surface.</p>
                   <div className="flex gap-4 mt-3 text-zinc-500">
-                    <button className="flex items-center gap-1.5 text-xs hover:text-red-400 transition-colors font-medium"><Heart size={14}/> 4.2k</button>
-                    <button className="flex items-center gap-1.5 text-xs hover:text-white transition-colors font-medium"><MessageCircle size={14}/> 128</button>
+                    <button className="flex items-center gap-1.5 text-xs hover:text-red-400 transition-colors font-medium"><Heart size={14}/> 12.4k</button>
+                    <button className="flex items-center gap-1.5 text-xs hover:text-white transition-colors font-medium"><MessageCircle size={14}/> 456</button>
                   </div>
                 </div>
               </div>
 
-              {/* Poll / Thermometer Mock */}
-              <div className="p-5 bg-gradient-to-br from-sky-950 to-zinc-950 rounded-2xl border border-sky-500/20 shadow-lg relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-4 opacity-10">
-                  <MessageSquare size={100} />
+              {/* Feed Item 3: Ticket Gagnant */}
+              <div className="p-4 bg-gradient-to-br from-emerald-950 to-zinc-900 rounded-2xl border border-emerald-500/20">
+                <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-widest mb-3 pb-2 border-b border-emerald-500/20">
+                  <TrendingUp size={16} /> Ticket de la Soirée
                 </div>
-                <div className="relative z-10">
-                  <div className="flex items-center gap-2 text-sky-400 font-bold text-xs uppercase tracking-widest mb-4 border-b border-sky-500/20 pb-2">
-                    <MessageSquare size={16} /> Le Thermomètre de la Mi-Temps
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 leading-tight">Va-t-on assister à une masterclass ou une clim monumentale ce soir ?</h3>
-                  <div className="space-y-3">
-                    <div className="relative h-12 bg-zinc-900 rounded-xl overflow-hidden flex items-center px-4 cursor-pointer hover:border-white/20 border border-white/5 transition-colors group">
-                      <div className="absolute inset-y-0 left-0 bg-blue-600/30 w-[78%] group-hover:bg-blue-600/40 transition-colors" />
-                      <span className="relative z-10 font-bold">L'Équipe va retourner le match !</span>
-                      <span className="relative z-10 ml-auto font-black text-blue-400 drop-shadow">78%</span>
-                    </div>
-                    <div className="relative h-12 bg-zinc-900 rounded-xl overflow-hidden flex items-center px-4 cursor-pointer hover:border-white/20 border border-white/5 transition-colors group">
-                      <div className="absolute inset-y-0 left-0 bg-sky-400/20 w-[22%] group-hover:bg-sky-400/30 transition-colors" />
-                      <span className="relative z-10 font-bold text-zinc-300">Clim totale assurée.</span>
-                      <span className="relative z-10 ml-auto font-black text-sky-400 opacity-80">22%</span>
-                    </div>
-                  </div>
-                  <div className="mt-5 pt-4 border-t border-white/5 flex justify-between items-center">
-                    <span className="text-xs text-zinc-500 font-mono tracking-wider">23,450 VOTES</span>
-                    <button className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-black rounded-lg text-sm font-black uppercase tracking-wider transition-all transform hover:scale-105 shadow-lg">
-                      Voir les cotes
-                    </button>
-                  </div>
+                <p className="text-white font-bold mb-2">Ce génie a validé une cote à 245.00 !</p>
+                <div className="bg-black/50 p-3 rounded-lg border border-emerald-500/10 font-mono text-sm text-emerald-200">
+                  <div className="flex justify-between"><span>Mise:</span> <span className="text-white">10 €</span></div>
+                  <div className="flex justify-between mt-1"><span>Gains:</span> <span className="font-black text-emerald-400">2,450 €</span></div>
                 </div>
               </div>
 
@@ -205,62 +258,87 @@ export default function AntenneWinamax() {
           {/* Tab: AGENDA / PROGRAMME */}
           {activeTab === 'agenda' && (
             <div className="animate-in fade-in slide-in-from-bottom-2 duration-300 p-2 md:p-4">
-              <h3 className="font-black text-2xl mb-8 flex items-center gap-3 tracking-tight">
-                <CalendarClock className="text-yellow-500" />
-                24h dans l'Antenne
-              </h3>
+              <div className="mb-8">
+                <h3 className="font-black text-2xl flex items-center gap-3 tracking-tight">
+                  <CalendarClock className="text-yellow-500" />
+                  24h au cœur de l'Antenne
+                </h3>
+                <p className="text-zinc-400 mt-2 text-sm">Décalage horaire en Amérique du Nord oblige, les nuits seront blanches et les journées rythmées par l'attente du soir.</p>
+              </div>
               
               <div className="relative border-l-2 border-zinc-800 ml-4 md:ml-6 space-y-10 pb-4">
                 
-                {/* Event 1 */}
+                {/* 08h30 */}
                 <div className="relative pl-8 md:pl-10">
                   <div className="absolute w-4 h-4 bg-zinc-700 rounded-full -left-[9px] top-1.5 ring-4 ring-black border-2 border-zinc-900" />
                   <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
                     <span className="text-yellow-500 font-mono font-black text-lg">08:30</span>
-                    <span className="bg-zinc-800 text-zinc-300 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider w-fit border border-zinc-700">Format Court</span>
+                    <span className="bg-zinc-800 text-zinc-300 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider w-fit border border-zinc-700">Vidéo Short</span>
                   </div>
-                  <h4 className="text-lg md:text-xl font-bold text-white">Le Petit Déj' Débrief</h4>
-                  <p className="text-zinc-400 text-sm mt-1 max-w-xl leading-relaxed">T'as dormi ? Voilà tout ce qu'il s'est passé cette nuit sur les pelouses américaines. 3 minutes chrono.</p>
+                  <h4 className="text-lg md:text-xl font-bold text-white">Le Réveil de l'Oncle Sam</h4>
+                  <p className="text-zinc-400 text-sm mt-1 max-w-xl leading-relaxed">Un montage ultra-rapide (60s) des 3 moments les plus fous de la nuit (buts, fails, réactions de supporters). Fun et énergique pour les transports.</p>
                 </div>
 
-                {/* Event 2 */}
+                {/* 11h00 */}
                 <div className="relative pl-8 md:pl-10">
-                  <div className="absolute w-4 h-4 bg-yellow-500 rounded-full -left-[9px] top-1.5 ring-4 ring-black shadow-[0_0_15px_rgba(234,179,8,0.6)] border-2 border-black" />
+                  <div className="absolute w-4 h-4 bg-zinc-700 rounded-full -left-[9px] top-1.5 ring-4 ring-black border-2 border-black" />
                   <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
-                    <span className="text-yellow-500 font-mono font-black text-lg">12:00</span>
-                    <span className="bg-blue-900/40 text-blue-300 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider w-fit border border-blue-500/20">Data & Analyse</span>
+                    <span className="text-zinc-400 font-mono font-black text-lg">11:00</span>
+                    <span className="bg-blue-900/40 text-blue-300 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider w-fit border border-blue-500/20">Article Interactif</span>
                   </div>
-                  <h4 className="text-lg md:text-xl font-bold text-white">L'Inside Scoop</h4>
-                  <p className="text-zinc-400 text-sm mt-1 max-w-xl leading-relaxed">L'analyse mathématique et tactique du choc de 18h. Le savant fou, c'est toi.</p>
+                  <h4 className="text-lg md:text-xl font-bold text-white">L'Apéro Data</h4>
+                  <p className="text-zinc-400 text-sm mt-1 max-w-xl leading-relaxed">L'analyse des cotes de l'EDF. Pourquoi le 2-0 est la cote la plus jouée ? Votez dans le mini-sondage : "D'accord avec les parieurs ?"</p>
                 </div>
 
-                {/* Event 3 - HIGHLIGHT */}
+                {/* 15h00 */}
+                <div className="relative pl-8 md:pl-10">
+                  <div className="absolute w-4 h-4 bg-zinc-700 rounded-full -left-[9px] top-1.5 ring-4 ring-black border-2 border-black" />
+                  <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+                    <span className="text-zinc-400 font-mono font-black text-lg">15:00</span>
+                    <span className="bg-emerald-900/30 text-emerald-400 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider w-fit border border-emerald-500/20">Storytelling</span>
+                  </div>
+                  <h4 className="text-lg md:text-xl font-bold text-white">L'Archive du Turfu</h4>
+                  <p className="text-zinc-400 text-sm mt-1 max-w-xl leading-relaxed">Focus sur la star adverse. Comment on arrêtait ce joueur en 1998 vs aujourd'hui ? Croisement data et histoire.</p>
+                </div>
+
+                {/* 18h00 - HIGHLIGHT */}
                 <div className="relative pl-8 md:pl-10 bg-zinc-900/60 p-5 rounded-2xl ml-2 md:ml-4 border border-red-900/30 shadow-2xl backdrop-blur-sm -scale-x-100">
                   <div className="scale-x-[-1]">
                     <div className="absolute w-5 h-5 bg-red-500 rounded-full -left-[45px] md:-left-[53px] top-6 ring-4 ring-black animate-pulse border-2 border-black shadow-[0_0_20px_rgba(239,68,68,0.8)]" />
                     <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-3">
                       <span className="text-red-500 font-mono font-black text-xl flex items-center gap-2">
-                        17:00 <span className="bg-red-600 text-white text-[10px] px-1.5 py-0.5 rounded uppercase tracking-widest animate-pulse">Live</span>
+                        18:00 <span className="bg-red-600 text-white text-[10px] px-1.5 py-0.5 rounded uppercase tracking-widest animate-pulse">Live</span>
                       </span>
-                      <span className="bg-red-900/30 text-red-400 border border-red-500/30 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider w-fit">Plateau TV</span>
+                      <span className="bg-red-900/30 text-red-400 border border-red-500/30 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider w-fit">Flux Winamax TV</span>
                     </div>
-                    <h4 className="text-xl md:text-2xl font-black text-white">Winamax TV Direct</h4>
-                    <p className="text-zinc-300 mt-2 max-w-xl leading-relaxed">Émission spéciale Avant-Match. Pronos de dernière minute, tensions et bonne humeur.</p>
+                    <h4 className="text-xl md:text-2xl font-black text-white">Le Live Arena</h4>
+                    <p className="text-zinc-300 mt-2 max-w-xl leading-relaxed">L'émission phare en direct. Les présentateurs répondent aux questions posées directement via le module de l'affilié.</p>
                     <button className="mt-4 px-5 py-2.5 bg-red-600 hover:bg-red-500 text-white text-sm font-black uppercase tracking-wider rounded-lg flex items-center gap-2 transition-all transform hover:scale-105 shadow-lg shadow-red-600/20">
                       <Play size={18} fill="currentColor" /> Rejoindre le Direct
                     </button>
                   </div>
                 </div>
 
-                {/* Event 4 */}
+                {/* 21h00 */}
+                <div className="relative pl-8 md:pl-10">
+                  <div className="absolute w-4 h-4 bg-sky-500 rounded-full -left-[9px] top-1.5 ring-4 ring-black shadow-[0_0_15px_rgba(14,165,233,0.6)] border-2 border-black" />
+                  <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+                    <span className="text-sky-400 font-mono font-black text-lg">21:00</span>
+                    <span className="bg-sky-900/30 text-sky-400 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider w-fit border border-sky-500/20">Pendant le match</span>
+                  </div>
+                  <h4 className="text-lg md:text-xl font-bold text-white">Le Live-Score Émotionnel</h4>
+                  <p className="text-zinc-400 text-sm mt-1 max-w-xl leading-relaxed">Une jauge de tension en temps réel. Plus il y a d'occasions, plus la jauge "Chaud/Clim" monte sur le site.</p>
+                </div>
+
+                {/* 01h00 */}
                 <div className="relative pl-8 md:pl-10 opacity-70 hover:opacity-100 transition-opacity">
                   <div className="absolute w-4 h-4 bg-zinc-800 rounded-full -left-[9px] top-1.5 ring-4 ring-black border-2 border-zinc-900" />
                   <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
-                    <span className="text-zinc-500 font-mono font-black text-lg">23:00</span>
-                    <span className="bg-zinc-800/80 text-zinc-400 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider w-fit border border-zinc-700">Communauté</span>
+                    <span className="text-zinc-500 font-mono font-black text-lg">01:00</span>
+                    <span className="bg-zinc-800/80 text-zinc-400 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider w-fit border border-zinc-700">Social Proof</span>
                   </div>
-                  <h4 className="text-lg md:text-xl font-bold">Le Thermomètre</h4>
-                  <p className="text-zinc-400 text-sm mt-1 max-w-xl leading-relaxed">Bilan de la journée. C'était une masterclass ou une clim ? Votez et donnez votre avis en direct.</p>
+                  <h4 className="text-lg md:text-xl font-bold">Le Zap de la Zone</h4>
+                  <p className="text-zinc-400 text-sm mt-1 max-w-xl leading-relaxed">Les meilleurs tweets et les plus gros tickets gagnants (ou perdants magnifiques) postés par la communauté.</p>
                 </div>
 
               </div>
@@ -279,41 +357,50 @@ export default function AntenneWinamax() {
                 
                 <div className="relative z-10 w-full max-w-xl mx-auto md:mx-0">
                   <span className="bg-black/40 backdrop-blur-md text-white px-3 py-1 rounded border border-white/10 text-xs font-black uppercase tracking-widest mb-4 inline-block shadow-sm">
-                    Gratuit • Compétition
+                    Le Jackpot des Affiliés
                   </span>
                   
-                  <h3 className="text-4xl md:text-5xl font-black mb-3 text-white drop-shadow-lg tracking-tighter leading-none">Ligue So Foot <br/><span className="text-amber-200">x Winamax</span></h3>
-                  <p className="text-amber-100/90 mb-8 max-w-md font-medium leading-relaxed drop-shadow">Pronostique les scores exacts, gagne le respect du forum et remporte des <strong className="text-white">Freebets</strong> et maillots officiels chaque semaine.</p>
+                  <h3 className="text-4xl md:text-5xl font-black mb-3 text-white drop-shadow-lg tracking-tighter leading-none">La Ligue <br/><span className="text-amber-200">So Foot</span></h3>
+                  <p className="text-amber-100/90 mb-8 max-w-md font-medium leading-relaxed drop-shadow">3 pronos gratuits chaque jour (Score, Buteur, Minute du but). Gagne le respect du forum et remporte des <strong className="text-white">Freebets</strong> et maillots officiels !</p>
                   
                   <div className="bg-zinc-950/80 backdrop-blur-xl rounded-2xl p-5 border border-white/10 shadow-2xl">
                     <div className="flex justify-between items-center mb-5 pb-3 border-b border-white/5">
-                      <span className="font-bold text-white tracking-wide">Ton pronostic pour ce soir :</span>
+                      <span className="font-bold text-white tracking-wide">Prono Gratuit du Jour :</span>
                       <span className="text-xs font-black text-amber-500 bg-amber-500/10 px-2 py-1 rounded">Ferme dans 2h</span>
                     </div>
                     
-                    <div className="flex items-center justify-between bg-black/60 p-4 rounded-xl border border-white/5 mb-5 shadow-inner">
-                      <div className="flex items-center gap-3">
-                        <span className="font-bold text-lg">FRA</span>
-                        <input type="number" defaultValue="2" className="w-12 h-12 bg-zinc-900 rounded-lg font-black text-center text-2xl outline-none focus:ring-2 focus:ring-amber-500 border border-zinc-800 transition-shadow" />
+                    <div className="flex flex-col gap-3 mb-5">
+                      <div className="flex items-center justify-between bg-black/60 p-4 rounded-xl border border-white/5 shadow-inner">
+                        <span className="text-sm font-bold text-zinc-400">Score Exact</span>
+                        <div className="flex items-center gap-3">
+                          <span className="font-bold text-lg">FRA</span>
+                          <input type="number" defaultValue="2" className="w-12 h-12 bg-zinc-900 rounded-lg font-black text-center text-2xl outline-none focus:ring-2 focus:ring-amber-500 border border-zinc-800 transition-shadow" />
+                          <span className="text-zinc-600 font-black text-xl">-</span>
+                          <input type="number" defaultValue="1" className="w-12 h-12 bg-zinc-900 rounded-lg font-black text-center text-2xl outline-none focus:ring-2 focus:ring-amber-500 border border-zinc-800 transition-shadow" />
+                          <span className="font-bold text-lg">ALL</span>
+                        </div>
                       </div>
-                      <span className="text-zinc-600 font-black text-xl">-</span>
-                      <div className="flex items-center gap-3">
-                        <input type="number" defaultValue="1" className="w-12 h-12 bg-zinc-900 rounded-lg font-black text-center text-2xl outline-none focus:ring-2 focus:ring-amber-500 border border-zinc-800 transition-shadow" />
-                        <span className="font-bold text-lg">ALL</span>
+                      <div className="flex items-center justify-between bg-black/60 px-4 py-3 rounded-xl border border-white/5 shadow-inner">
+                        <span className="text-sm font-bold text-zinc-400">Buteur</span>
+                        <select className="bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm font-bold text-white outline-none focus:ring-2 focus:ring-amber-500">
+                          <option>K. Mbappé</option>
+                          <option>A. Griezmann</option>
+                          <option>O. Giroud</option>
+                        </select>
                       </div>
                     </div>
                     
                     <button className="w-full py-4 bg-amber-500 hover:bg-amber-400 text-black font-black text-lg uppercase tracking-widest rounded-xl transition-all transform hover:-translate-y-0.5 shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)]">
-                       Valider (Gratuit)
+                       Valider mes 3 pronos gratuits
                     </button>
                     
                     {/* The Drive-To-Bet Magic */}
                     <div className="mt-5 pt-5 border-t border-white/10 text-center">
-                      <p className="text-sm text-zinc-400 mb-3 uppercase tracking-widest font-bold">Le Twist Winamax</p>
-                      <button className="text-sm md:text-base font-bold text-white flex flex-col md:flex-row items-center justify-center gap-2 w-full hover:bg-zinc-800/80 transition-colors bg-zinc-900 py-3 px-4 rounded-xl border border-zinc-800">
-                        <span>En vrai, ce prono te rapporterait</span>
+                      <p className="text-sm text-zinc-400 mb-3 font-bold">Ton prono gratuit est bon ? Transforme-le :</p>
+                      <button className="text-sm md:text-base font-bold text-white flex flex-col md:flex-row items-center justify-center gap-2 w-full hover:bg-zinc-800/80 transition-colors bg-zinc-900 py-3 px-4 rounded-xl border border-zinc-800 group">
+                        <span>Tu as confiance ? En vrai, ce ticket rapporte</span>
                         <span className="bg-red-600 text-white px-2 py-0.5 rounded font-black shadow-lg shadow-red-600/20 whitespace-nowrap">450 €</span>
-                        <span className="text-zinc-500 hidden md:inline">&rarr;</span>
+                        <span className="text-zinc-500 hidden md:inline group-hover:translate-x-1 transition-transform">&rarr;</span>
                       </button>
                     </div>
                   </div>
@@ -323,10 +410,10 @@ export default function AntenneWinamax() {
               
               <div className="mt-8 flex items-center justify-between px-4 bg-zinc-900/50 py-3 rounded-xl border border-white/5">
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center font-bold font-mono text-zinc-400 border border-zinc-700">1K</div>
+                  <div className="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center font-bold font-mono text-zinc-400 border border-zinc-700 text-sm">34e</div>
                   <div>
-                    <h4 className="font-bold text-white">Classement Général</h4>
-                    <p className="text-xs text-zinc-400 mt-0.5 font-mono">1,432 / 12,094 joueurs</p>
+                    <h4 className="font-bold text-white">Classement Ligue SoFoot</h4>
+                    <p className="text-xs text-zinc-400 mt-0.5"><span className="text-amber-500 font-bold">Devant la Rédac</span> (Polo: 78e)</p>
                   </div>
                 </div>
                 <button className="text-sm font-bold text-yellow-500 hover:text-yellow-400 uppercase tracking-widest">Voir tout</button>
