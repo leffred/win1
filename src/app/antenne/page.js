@@ -144,40 +144,97 @@ export default function AntenneWinamax() {
           </div>
         </header>
 
-        {/* 2. Main Stage (Video) */}
-        <section className="relative aspect-[16/9] md:aspect-[21/9] bg-zinc-950 overflow-hidden group cursor-pointer">
-          <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 to-black mix-blend-overlay" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-600/20 via-transparent to-transparent opacity-50" />
-          
-          {/* Mock Video UI */}
-          <div className="absolute inset-0 flex flex-col justify-between p-6">
-            <div className="flex justify-between items-start">
-              <span className="bg-black/60 backdrop-blur-md px-3 py-1 rounded text-xs font-bold text-white border border-white/10 flex items-center gap-2">
-                <TrendingUp size={14} className="text-yellow-500" />
-                L'Émission du Soir
+        {/* 2. Main Stage (Video + Chat) */}
+        <div className="flex flex-col lg:flex-row bg-zinc-950 border-b border-white/5 min-h-[40vh] lg:min-h-[60vh]">
+          {/* Video Player */}
+          <section className="relative flex-grow aspect-[16/9] lg:aspect-auto border-b lg:border-b-0 lg:border-r border-white/5 overflow-hidden group cursor-pointer">
+            <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 to-black mix-blend-overlay" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-600/20 via-transparent to-transparent opacity-50" />
+            
+            {/* Mock Video UI */}
+            <div className="absolute inset-0 flex flex-col justify-between p-6">
+              <div className="flex justify-between items-start">
+                <span className="bg-black/60 backdrop-blur-md px-3 py-1 rounded text-xs font-bold text-white border border-white/10 flex items-center gap-2">
+                  <TrendingUp size={14} className="text-yellow-500" />
+                  L'Émission du Soir
+                </span>
+                <span className="bg-red-600 text-white px-2 py-0.5 rounded text-xs font-black uppercase tracking-widest animate-pulse">Live</span>
+              </div>
+              
+              <div className="text-center group-hover:scale-105 transition-transform duration-500 ease-out">
+                <button className="w-16 h-16 md:w-20 md:h-20 bg-yellow-500/90 text-black rounded-full flex items-center justify-center mx-auto shadow-[0_0_30px_rgba(234,179,8,0.4)] backdrop-blur-sm border-2 border-yellow-400 group-hover:bg-yellow-400 transition-colors">
+                  <Play fill="currentColor" size={32} className="ml-1" />
+                </button>
+              </div>
+              
+              <div className="translate-y-2 group-hover:translate-y-0 opacity-80 group-hover:opacity-100 transition-all duration-300">
+                <h2 className="text-2xl md:text-3xl font-black text-white drop-shadow-lg tracking-tight">Le Debrief d'Après-Match</h2>
+                <p className="text-zinc-300 text-sm md:text-base font-light max-w-lg mt-1 drop-shadow">Walid et Polo décryptent la qualification de l'Équipe de France. Vos questions en direct.</p>
+              </div>
+            </div>
+            
+            {/* Progress Bar Mock */}
+            <div className="absolute bottom-0 inset-x-0 h-1 bg-zinc-800">
+              <div className="h-full bg-red-600 w-1/3 relative">
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full" />
+              </div>
+            </div>
+          </section>
+
+          {/* Live Chat Panel */}
+          <aside className="w-full lg:w-[22rem] xl:w-96 flex-shrink-0 bg-zinc-900/50 flex flex-col h-[300px] lg:h-auto">
+            <div className="p-3 border-b border-white/5 bg-zinc-900/80 flex justify-between items-center backdrop-blur-md">
+              <h3 className="font-bold text-sm text-zinc-200">Chat en direct</h3>
+              <span className="flex items-center gap-1.5 text-xs font-bold text-zinc-500">
+                <Users size={12} /> 4,102
               </span>
-              <span className="bg-red-600 text-white px-2 py-0.5 rounded text-xs font-black uppercase tracking-widest animate-pulse">Live</span>
             </div>
             
-            <div className="text-center group-hover:scale-105 transition-transform duration-500 ease-out">
-              <button className="w-16 h-16 md:w-20 md:h-20 bg-yellow-500/90 text-black rounded-full flex items-center justify-center mx-auto shadow-[0_0_30px_rgba(234,179,8,0.4)] backdrop-blur-sm border-2 border-yellow-400 group-hover:bg-yellow-400 transition-colors">
-                <Play fill="currentColor" size={32} className="ml-1" />
-              </button>
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-hide text-sm flex flex-col justify-end">
+              <div className="flex gap-2">
+                <div className="w-6 h-6 rounded-full bg-blue-600 flex-shrink-0"></div>
+                <div>
+                  <span className="font-bold text-zinc-300 text-xs mr-2">NicoD</span>
+                  <span className="text-zinc-400">Le schéma tactique de Deschamps, on en parle ?</span>
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <div className="w-6 h-6 rounded-full bg-zinc-700 flex-shrink-0 flex items-center justify-center pr-px text-[10px] bg-yellow-500 text-black font-bold">W</div>
+                <div>
+                  <span className="font-bold text-yellow-500 text-xs mr-2 border border-yellow-500/30 px-1 py-0.5 rounded ml-[-2px]">WinaMod</span>
+                  <span className="text-zinc-200">Oui, c'est le sujet dans 5 min ! ⏳</span>
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <div className="w-6 h-6 rounded-full bg-red-600 flex-shrink-0"></div>
+                <div>
+                  <span className="font-bold text-zinc-300 text-xs mr-2">PariFou</span>
+                  <span className="text-zinc-400">Mais il est où Griezmann ??</span>
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <div className="w-6 h-6 rounded-full bg-emerald-600 flex-shrink-0"></div>
+                <div>
+                  <span className="font-bold text-zinc-300 text-xs mr-2">MourinhoDu75</span>
+                  <span className="text-zinc-400">C'est une dinguerie ce match je reviens pas mdrr 😱 🔥</span>
+                </div>
+              </div>
             </div>
             
-            <div className="translate-y-2 group-hover:translate-y-0 opacity-80 group-hover:opacity-100 transition-all duration-300">
-              <h2 className="text-2xl md:text-3xl font-black text-white drop-shadow-lg tracking-tight">Le Debrief d'Après-Match</h2>
-              <p className="text-zinc-300 text-sm md:text-base font-light max-w-lg mt-1 drop-shadow">Walid et Polo décryptent la qualification de l'Équipe de France. Vos questions en direct.</p>
+            <div className="p-3 border-t border-white/5 bg-zinc-900/80 backdrop-blur-md">
+              <div className="relative group">
+                <input 
+                  type="text" 
+                  placeholder="Participer au débat..." 
+                  className="w-full bg-zinc-950 border border-zinc-800 rounded-full py-2.5 pl-4 pr-10 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-yellow-500/50 transition-colors"
+                />
+                <button className="absolute right-1 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-zinc-400 hover:bg-yellow-500 hover:text-black transition-colors">
+                  <ArrowLeft size={16} className="rotate-180" />
+                </button>
+              </div>
             </div>
-          </div>
-          
-          {/* Progress Bar Mock */}
-          <div className="absolute bottom-0 inset-x-0 h-1 bg-zinc-800">
-            <div className="h-full bg-red-600 w-1/3 relative">
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full" />
-            </div>
-          </div>
-        </section>
+          </aside>
+        </div>
 
         {/* 3. Navigation Tabs */}
         <div className="flex border-b border-white/5 px-2 bg-zinc-900/50 overflow-x-auto scrollbar-hide shrink-0">
